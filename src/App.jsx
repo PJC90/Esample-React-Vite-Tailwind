@@ -18,6 +18,14 @@ function handleSubmit(e) {
 }
 function App() {
   const [count, setCount] = useState(0)
+  const [items, setItems] = useState([1,2,3])
+
+  console.log(items)
+  const aggiungiItem = () => {
+    const newItems = 4
+    setItems([...items, newItems])
+    console.log(items)
+  }
   const cities = [
     {
       id:1,
@@ -101,6 +109,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={aggiungiItem}>Agg 4</button>
         <button onClick={handleClick}>
           Alert
         </button>
