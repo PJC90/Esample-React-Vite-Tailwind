@@ -5,6 +5,7 @@ import './App.css'
 import Ciao from './Components/Ciao'
 import Pri from './Components/Pri'
 import Card from './Components/Card'
+import CardForm from './Components/CardForm'
 
 function handleClick() {
   alert ("ciaone!")
@@ -26,7 +27,10 @@ function App() {
     setItems([...items, newItems])
     console.log(items)
   }
-  const cities = [
+  const addCity = (city) => {
+    setCities([...cities, city])
+  }
+  const [cities, setCities] = useState([
     {
       id:1,
       title: "Tokyo",
@@ -52,9 +56,10 @@ function App() {
       isVisited: false
     },
 
-  ]
+  ])
   return (
     <>
+      <CardForm addCity={addCity}></CardForm>
     <div className='grid grid-cols-4 gap-10'>
     <Card 
     title="Tokyo" 
